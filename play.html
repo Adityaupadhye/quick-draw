@@ -9,9 +9,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@1,500&display=swap" rel="stylesheet">  
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
 
 </head>
 <body class="bg-custom">
+    <ul class="nav">
+        <li class="nav-item">
+          <a style="color: white" class="nav-link active font-weight-bold mx-4 mt-3 p-1" href="#"><i class="fas fa-arrow-left"></i> Back</a>
+        </li>
+    </ul>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2"></div>
@@ -23,12 +29,12 @@
             <div class="col-md-2">
                 <div class="row">
                     <div class="col">
-                        <input type="button" value="Confirm Selection" class="btn-confirm">
+                        <button type="button" class="btn btn-success lbls p-2 btn-confirm" type="submit">Confirm Selection</button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <input type="button" value="Clear Canvas" class="btn-cancel"> 
+                        <button type="button" class="btn btn-danger lbls p-2 btn-cancel" type="submit">Clear Canvas</button> 
                     </div>
                 </div>
             </div>
