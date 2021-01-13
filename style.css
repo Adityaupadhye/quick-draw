@@ -77,6 +77,7 @@
     border: 4px solid antiquewhite;
 }
 
+<<<<<<< HEAD
 .draw{
     border: 4px solid antiquewhite;
     background-image: url(assets//no-bg-canvas.png);
@@ -87,3 +88,8 @@
     width: 100%;
     height: auto;
 }
+=======
+.lbls{
+    width: 100%;
+}
+>>>>>>> 0048a111e5fbe233c965b742662b245554f7ab3a
