@@ -3,9 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Play</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@1,500&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
 </head>
-<body>
-    
+<body class="bg-custom">
+    <div class="container-fluid">
+        <div class="row h-100">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="img mt-5">
+                    <img src="assets//no-bg-canvas.png" alt="canvas" height="100%" width="100%">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col">
+                        <input type="button" value="Confirm Selection" class="btn-confirm">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="button" value="Clear Canvas" class="btn-cancel"> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
