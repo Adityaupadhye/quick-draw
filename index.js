@@ -1,41 +1,27 @@
-window.addEventListener('load', ()=>{ 
-        
-     resize(); 
-    // document.addEventListener('mousedown', startPainting); 
-    // document.addEventListener('mouseup', stopPainting); 
-    // document.addEventListener('mousemove', sketch); 
-     //window.addEventListener('resize', resize); 
-
-    var draw = document.getElementById('canvas');
-    draw.addEventListener('mousedown',startPainting);
-    draw.addEventListener('mouseup',stopPainting);
-    draw.addEventListener('mousemove',sketch);
-
-});
-
-
-    
-const canvas = document.querySelector('#canvas'); 
+const canvas = document.getElementById('canvas');
 const clear = document.querySelector("#clear");
 
 // Context for the canvas for 2 dimensional operations 
 const ctx = canvas.getContext('2d'); 
-    
- 
-function resize(){ 
-  ctx.canvas.width = window.innerWidth; 
-  ctx.canvas.height = window.innerHeight; 
-} 
-    
- 
+//resize();
+
 let coord = {x:0 , y:0};  
  
-let paint = false; 
-    
+let paint = false;
 
+//set events
+canvas.addEventListener('mousedown',startPainting);
+canvas.addEventListener('onmouseup',stopPainting);
+canvas.addEventListener('mousemove',sketch);
+    
+function resize(){ 
+  ctx.canvas.width = canvas.clientWidth; 
+  ctx.canvas.height = canvas.clientHeight; 
+} 
+    
 function getPosition(event){ 
-  coord.x = event.clientX - canvas.offsetLeft; 
-  coord.y = event.clientY - canvas.offsetTop; 
+  coord.x = event.clientX; 
+  coord.y = event.clientY; 
 } 
   
 function startPainting(event){ 
@@ -45,20 +31,23 @@ function startPainting(event){
 } 
 
 function stopPainting(){ 
-  paint = false; 
+  paint = false;
+  console.log("stop"); 
 } 
+
+function moving(event){
+  console.log("moving");
+}
     
 function sketch(event){ 
-  if (!paint) return; 
+  //if (!paint) return; 
+  if(event.buttons != 1) return;
 
-  //console.log("yes");
+  console.log("yes");
   ctx.beginPath(); 
     
   ctx.lineWidth = 5; 
-   
-   
   ctx.lineCap = 'round'; 
-    
   ctx.strokeStyle = 'black'; 
       
   // The cursor to start drawing 
@@ -72,9 +61,11 @@ function sketch(event){
    
   // A line is traced from start 
   // coordinate to this coordinate 
-  ctx.lineTo(coord.x , coord.y); 
+  ctx.lineTo(coord.x , coord.y);
+  //  console.log(coord); 
     
   // Draws the line. 
+  ctx.closePath();
   ctx.stroke(); 
 }
 

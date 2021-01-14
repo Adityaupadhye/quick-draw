@@ -45,7 +45,7 @@
 }
 
 .btn-confirm{
-    margin-top: 6cm;
+    margin-top: 4cm;
     padding: 5px;
     border-radius: 8px;
     background-color: rgb(22, 197, 22);
@@ -60,7 +60,7 @@
 
 .btn-cancel{
     margin-top: 1cm;
-    margin-bottom: 6cm;
+    margin-bottom: 4cm;
     background-color: rgb(214, 30, 30);
     color: antiquewhite;
     width: 100%;
@@ -82,21 +82,30 @@
 }
 
 .draw{
-    border: 4px solid antiquewhite;
-    background-image: url(assets//no-bg-canvas.png);
+    border: 8px solid burlywood;
+    /* background-image: url(assets//no-bg-canvas.png);
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: center;
-    margin: autos;
+    background-position: center; */
+    background-color: white;
+    padding: 2px;
     width: 100%;
     height: auto;
+    vertical-align:middle;
 }
 
 .lbls{
     width: 100%;
 }
 
-#canvas { 
+.draw-here{
+    text-align: center;
+    color: antiquewhite;
+    font-size: x-large;
+    font-family: 'Cabin', sans-serif;
+}
+
+/* #canvas { 
     position:fixed;
     left:0;
     top:0;
@@ -104,4 +113,4 @@
     height: 100%;
     outline: none;
     border: none; 
-}
+} */
