@@ -3,11 +3,13 @@ const clear = document.querySelector("#clear");
 
 // Context for the canvas for 2 dimensional operations 
 const ctx = canvas.getContext('2d'); 
-//resize();
 
 let coord = {x:0 , y:0};  
  
 let paint = false;
+
+//resize();
+//window.addEventListener('resize',resize);
 
 //set events
 canvas.addEventListener('mousedown',startPainting);
@@ -15,19 +17,24 @@ canvas.addEventListener('onmouseup',stopPainting);
 canvas.addEventListener('mousemove',sketch);
     
 function resize(){ 
-  ctx.canvas.width = canvas.clientWidth; 
-  ctx.canvas.height = canvas.clientHeight; 
+  canvas.width = window.innerWidth; 
+  canvas.height = window.innerHeight;
+  console.log(canvas.classList);
+  console.log("window= "+window.innerHeight,window.innerWidth); 
 } 
     
 function getPosition(event){ 
-  coord.x = event.clientX; 
-  coord.y = event.clientY; 
+  var rect= canvas.getBoundingClientRect();
+  //rect.x, rect.y gives position of canvas wrt browser size
+  coord.x = event.clientX-rect.x; 
+  coord.y = event.clientY-rect.y; 
 } 
   
 function startPainting(event){ 
   paint = true; 
   getPosition(event);
-  console.log(event.x,event.y); 
+  console.log(coord.x,coord.y);
+  //console.log(event.x,event.y);
 } 
 
 function stopPainting(){ 
@@ -43,7 +50,7 @@ function sketch(event){
   //if (!paint) return; 
   if(event.buttons != 1) return;
 
-  console.log("yes");
+  //console.log("yes");
   ctx.beginPath(); 
     
   ctx.lineWidth = 5; 
@@ -64,8 +71,7 @@ function sketch(event){
   ctx.lineTo(coord.x , coord.y);
   //  console.log(coord); 
     
-  // Draws the line. 
-  ctx.closePath();
+  // Draws the line.
   ctx.stroke(); 
 }
 
