@@ -95,8 +95,7 @@
 .lbls{
     width: 100%;
 }
-
-.brd { 
+#canvas { 
     position:fixed;
     left:0;
     top:0;
