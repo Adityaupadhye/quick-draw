@@ -1,15 +1,23 @@
 window.addEventListener('load', ()=>{ 
         
-    resize(); 
-    document.addEventListener('mousedown', startPainting); 
-    document.addEventListener('mouseup', stopPainting); 
-    document.addEventListener('mousemove', sketch); 
-    window.addEventListener('resize', resize); 
-}); 
+     resize(); 
+    // document.addEventListener('mousedown', startPainting); 
+    // document.addEventListener('mouseup', stopPainting); 
+    // document.addEventListener('mousemove', sketch); 
+     //window.addEventListener('resize', resize); 
+
+    var draw = document.getElementById('canvas');
+    draw.addEventListener('mousedown',startPainting);
+    draw.addEventListener('mouseup',stopPainting);
+    draw.addEventListener('mousemove',sketch);
+
+});
+
+
     
 const canvas = document.querySelector('#canvas'); 
 const clear = document.querySelector("#clear");
-   
+
 // Context for the canvas for 2 dimensional operations 
 const ctx = canvas.getContext('2d'); 
     
@@ -30,17 +38,20 @@ function getPosition(event){
   coord.y = event.clientY - canvas.offsetTop; 
 } 
   
-
 function startPainting(event){ 
   paint = true; 
-  getPosition(event); 
+  getPosition(event);
+  console.log(event.x,event.y); 
 } 
+
 function stopPainting(){ 
   paint = false; 
 } 
     
 function sketch(event){ 
   if (!paint) return; 
+
+  //console.log("yes");
   ctx.beginPath(); 
     
   ctx.lineWidth = 5; 
