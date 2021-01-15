@@ -83,15 +83,11 @@
 
 .draw{
     border: 8px solid burlywood;
-    /* background-image: url(assets//no-bg-canvas.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center; */
     background-color: white;
     padding: 2px;
-    width: 100%;
-    height: auto;
-    vertical-align:middle;
+    /* width: 100%; */
+    /* height: auto; */
+    /* vertical-align:middle; */
 }
 
 .lbls{
